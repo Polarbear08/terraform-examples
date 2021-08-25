@@ -2,7 +2,7 @@
 EC2インスタンスを作成する。
 
 ## 前提
-`.aws` ディレクトリ以下に `credentials`ファイルを作成し、`credentials`ファイルを作成する。
+`.aws` ディレクトリ以下に `credentials`ファイルを作成する。
 
 ```
 [terraform-tutorial]
