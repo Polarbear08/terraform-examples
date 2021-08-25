@@ -1,0 +1,7 @@
+[jenkins_master]
+54.234.229.160
+
+[jenkins_master:vars]
+ansible_port=22
+ansible_user=centos
+ansible_ssh_private_key_file=~/.ssh/id_sample01

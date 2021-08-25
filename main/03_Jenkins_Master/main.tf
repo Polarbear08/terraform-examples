@@ -155,7 +155,6 @@ resource "aws_spot_fleet_request" "sample03-request01" {
     key_name                    = aws_key_pair.sample03-keypair01.key_name
     vpc_security_group_ids      = [aws_security_group.sample03-sg01.id]
     subnet_id                   = aws_subnet.sample03-subnet01.id
-    user_data                   = file("shell/launch.sh")
     associate_public_ip_address = true
 
     tags = {

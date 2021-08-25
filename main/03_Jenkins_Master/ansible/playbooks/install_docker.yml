@@ -1,0 +1,22 @@
+---
+- hosts: [jenkins_master]
+  remote_user: centos
+  become: yes
+  tasks:
+    - name: add docker repo
+      shell: "yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo"
+    - name: install docker
+      yum: name={{ item }}
+      with_items:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+    - name: add centos in docker group
+      shell: "usermod -a -G docker centos"
+    - name: start docker
+      systemd:
+        name: docker.service
+        state: restarted
+        daemon_reload: yes
+        enabled: yes
+

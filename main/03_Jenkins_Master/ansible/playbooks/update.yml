@@ -1,0 +1,9 @@
+---
+- hosts: [jenkins_master]
+  remote_user: centos
+  become: yes
+  tasks:
+    - name: update
+      yum:
+        name: "*"
+        state: latest
